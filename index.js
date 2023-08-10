@@ -1,13 +1,14 @@
 const express = require('express')
 const jwt = require('jsonwebtoken')
 const { expressjwt: expressjwt } = require('express-jwt')
+const cors = require('cors')
 
 const app = express()
 
+const PORT = 8888
+
+app.use(cors())
 app.use(express.json())
-
-const PORT = process.env.PORT || 8888
-
 app.use(express.static('public'))
 
 const jwtCheck = expressjwt({
@@ -19,6 +20,7 @@ const users = [
     { id: 1, username: 'admin', password: 'admin' },
     { id: 2, username: 'guest', password: 'guest' },
 ]
+
 app.post('/login', (req, res) => {
     if (!req.body.username || !req.body.password) {
         res.status(400).send('You need a username and password')

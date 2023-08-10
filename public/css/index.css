@@ -1,0 +1,24 @@
+header{
+    width: 85%;
+    margin: auto;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.logo{
+    font-weight: 500;
+    text-decoration: none;
+    color:rgb(50, 50, 50);
+}
+.logo:hover{
+    color:black;
+}
+.buttons{
+    display: flex;
+    justify-content: center;
+}
+
+.alert{
+    width: 60%;
+    word-break: break-all;
+}

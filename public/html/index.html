@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>page</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+            crossorigin="anonymous"
+        />
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"
+        ></script>
+
+        <link href="/css/index.css" rel="stylesheet" />
+        <script src="/js/index.js"></script>
+    </head>
+    <body>
+        <header>
+            <div class="d-flex align-items-baseline">
+                <a href="#" class="logo fs-2">Secure Website</a>
+                <a href="#" class="logo ms-4 fs-4">Home</a>
+            </div>
+            <button
+                type="button"
+                class="btn btn-outline-danger btn-lg d-none"
+                id="btn-logout"
+                onclick="logout()"
+            >
+                Logout
+            </button>
+            <button
+                type="button"
+                class="btn btn-outline-success btn-lg"
+                id="btn-login"
+                data-bs-toggle="modal"
+                data-bs-target="#loginModal"
+            >
+                Login
+            </button>
+            <!-- Modal -->
+            <div
+                class="modal fade"
+                id="loginModal"
+                tabindex="-1"
+                aria-labelledby="loginModalLabel"
+                aria-hidden="true"
+            >
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="loginModalLabel">
+                                Sign in
+                            </h5>
+                            <button
+                                type="button"
+                                class="btn-close"
+                                data-bs-dismiss="modal"
+                                aria-label="Close"
+                            ></button>
+                        </div>
+                        <div class="modal-body p-3">
+                            <div class="mb-4 mt-2">
+                                <label for="username" class="form-label"
+                                    >Username</label
+                                >
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="username"
+                                />
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label"
+                                    >Password</label
+                                >
+                                <input
+                                    type="password"
+                                    class="form-control"
+                                    id="password"
+                                />
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button
+                                type="button"
+                                class="btn btn-secondary"
+                                data-bs-dismiss="modal"
+                            >
+                                Close
+                            </button>
+                            <button
+                                type="button"
+                                class="btn btn-primary"
+                                data-bs-dismiss="modal"
+                                onclick="login()"
+                            >
+                                login
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <h5 class="text-center mt-5">
+            Welcome to the headline generator application. Click on the buttons
+            to get a headline
+        </h5>
+
+        <div class="buttons mt-5">
+            <button
+                type="button"
+                class="btn btn-primary btn-lg me-3"
+                onclick="publicRequest()"
+            >
+                Public
+            </button>
+            <button
+                type="button"
+                class="btn btn-secondary btn-lg"
+                onclick="privateRequest()"
+            >
+                Private
+            </button>
+        </div>
+        <div class="alert alert-success mt-4 m-auto" role="alert">
+            <p class="response">Test the API</p>
+        </div>
+
+        <div class="image-container my-4 d-flex justify-content-center">
+            <img
+                src="https://http.cat/images/200.jpg"
+                alt="status code 200"
+                width="400px"
+            />
+        </div>
+    </body>
+</html>
